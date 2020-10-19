@@ -3,8 +3,10 @@
 ll x, y, m, tmp;
 ll result = 1;
 
+//迴圈
+/*
 ll fast_power(ll x, ll y, ll m){
-	if(y == 0) return 1;
+	if(y == 0) return 1 % m;
 	else{
 		result = 1;
 		while(y != 1 && x != 0){
@@ -21,6 +23,20 @@ ll fast_power(ll x, ll y, ll m){
 		return result;
 	}
 }
+*/
+
+//遞迴
+ll fast_power(ll x, ll y, ll m){
+	if(y == 0) return 1%m; //陷阱：要考慮 m == 1 的狀態
+	else if(y%2 == 0){
+		ll tmp = fast_power(x, y/2, m);
+		return (tmp*tmp)%m;
+	}
+	else{
+		ll tmp = fast_power(x, y/2, m);
+		return (((tmp*tmp)%m)*x)%m;
+	}
+}
 
 
 int main(){
@@ -33,5 +49,10 @@ int main(){
 		printf("%llu\n", fast_power(x, y, m));
 	}
 }
-//
-//775477547754 775477547754 10235876
+
+/*
+775477547754 775477547754 10235876
+-> 9284380
+*/
+
+
