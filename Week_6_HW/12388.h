@@ -41,47 +41,99 @@ int query_heatstroke(Node *now, int x){
 }
 
 void eat_rat(Node **root, int x){
-	Node* now = *root;
-	Node* tmp = NULL;
-	if(now == NULL) return;
-	if(x == now->level){
-		if(now->left == NULL && now->right == NULL){
-			tmp = now;
-			now = NULL;
-			free(tmp);
+	Node* parent = NULL;
+	Node* cur = (*root);
+	// find cur->level that match x
+	while(cur != NULL){
+		if(x == cur->level) break;
+		else if(x < cur->level){
+			parent = cur;
+			cur = cur->left;
 		}
-		else if(now->left == NULL){
-			//half leaf with left NULL
-			tmp = now;
-			now = now->right;
-			free(tmp);
-		}
-		else if(now->right == NULL){
-			//half leaf with right NULL
-			tmp = now;
-			now = now->left;
-			free(tmp);
-		}
-		else{
-			//find the most right in the left
-			Node* lr = now->left;
-			Node* lr_prev = now;
-			while(lr->right != NULL){
-				lr_prev = lr;
-				lr = lr->right;
+		else if(x > cur->level){
+			parent = cur;
+			cur = cur->right;
+		} else;
+	}
+
+	//no match
+	if(cur == NULL) return;
+	else;
+
+	//no child
+	if(cur->left == NULL && cur->right == NULL){
+		//cur is not main root
+		if(cur != (*root)){
+			if(parent->left == cur){
+				parent->left = NULL;
 			}
-			//delete
-			tmp = now;
-			now = lr;
-			lr_prev->right = NULL;
-			free(tmp);
+			else{
+				parent->right = NULL;
+			}
 		}
-	} 
-	else if(x < now->level){
-		eat_rat(&(now->left), x); // find left
+		//cur is main root == the last element
+		else{
+			(*root) = NULL;
+		}
+		free(cur);
 	}
-	else if(x > now->level){
-		eat_rat(&(now->right), x); // find right
+	//left have child
+	else if(cur->right == NULL){
+		//cur is not main root
+		if(cur != (*root)){
+			if(parent->left == cur){
+				parent->left = cur->left;
+			}
+			else{
+				parent->right = cur->left;
+			}
+		}
+		//cur is main root == the last element
+		else{
+			(*root) = cur->left;
+		}
+		free(cur);
 	}
-	*root = now;
+	//right have child
+	else if(cur->left == NULL){
+		//cur is not main root
+		if(cur != (*root)){
+			if(parent->left == cur){
+				parent->left = cur->right;
+			}
+			else{
+				parent->right = cur->right;
+			}
+		}
+		//cur is main root == the last element
+		else{
+			(*root) = cur->right;
+		}
+		free(cur);
+	}
+	//two child
+	else{
+		Node* small = cur->left;
+		int val;
+		//find small(the left side and the right)
+		while(small->right != NULL){
+			small = small->right;
+		}
+		val = small->level;
+		// change cur->level without changing address
+		cur->level = val;
+		//delete the original node with the same level as small
+		eat_rat(&(cur->left), val);
+	}
 }
+
+// print preorder for check
+/*
+void preorder(Node *root){
+	if(root != NULL){
+		preorder(root->left);
+		printf("%d", root->level);
+		preorder(root->right);
+	}
+}
+*/

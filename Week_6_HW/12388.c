@@ -13,6 +13,8 @@ int main() {
 	build_tree(&root,a,0,n-1);
 	scanf("%d",&q);
 	while(q--) {
+		//preorder(root);
+		//printf("\n");
 		int x;
 		scanf("%d",&x);
 		if(query_heatstroke(root,x)!=0) {
