@@ -1,81 +1,96 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define NUM 1000000009
+#include <ctype.h>
+
+int arr[10000000];
+int n, q;
+int x;
 
 typedef struct t_Node{
-	int id, num;
+	int index;
+	int value;
 	struct t_Node* left;
 	struct t_Node* right;
 } Node;
 
-int order[NUM];
+void builtTree(Node** root, int l, int r){
+	if(l > r){
+		(*root) = NULL;
+		return;
+	} else;
+	//mid of arr
+	int mid = (l+r)/2;
+	//create node 
+	(*root) = (Node*)malloc(sizeof(Node));
+	(*root)->index = mid;
+	(*root)->value = arr[mid];
 
-void build_tree(Node **now, int *arr, int l, int r) {
-	if(l>r) return;
-	Node* root = (*now);
-	root = (Node*)malloc(sizeof(Node));
-	if(l==r) {
-		root->id = l;
-		root->num = arr[l];
-		root->left = NULL;
-		root->right = NULL;
+	if(l == r){
+		(*root)->left = NULL;
+		(*root)->right = NULL;
 	}
-	else {
-		int mid = (l+r)/2;
-		root->id = mid;
-		root->num = arr[mid];
-		build_tree(&(root->left), arr, l, mid-1);
-		build_tree(&(root->right), arr, mid+1, r);
+	else{
+		builtTree(&((*root)->left), l, mid-1);
+		builtTree(&((*root)->right), mid+1, r);
 	}
-	*now = root;
 }
 
-int search(Node *now, int x) {
-    if(now==NULL) return 0;
+void search(Node* root){
+	//can't find
+	if(root == NULL){
+		printf("Break your bridge!\n");
+		return;
+	}
 	else;
 
-	if(now->num == x) return now->id;
-	else if(now->num > x) return search(now->left, x);
-	else return search(now->right, x);
+	//x == root
+	if(root->value == x){
+		printf("%d\n", root->index);
+	}
+	//x < root, find left
+	else if(root->value > x){
+		search(root->left);
+	}
+	//x > root, find right
+	else if(root->value < x){
+		search(root->right);
+	}
 }
 
-
-void freeBST(Node *root){
-    if(root == NULL) return;
-	else;
-	freeBST(root->left);
-	freeBST(root->right);
-	free(root);
+void freeTree(Node* root){
+	if(root != NULL){
+		freeTree(root->left);
+		freeTree(root->right);
+		free(root);
+	} else;
 }
+
+/*
+void inorder(Node* root){
+	if(root != NULL){
+		inorder(root->left);
+		printf("%d ", root->value);
+		inorder(root->right);
+	} else;
+}
+*/
 
 int main(){
-	int n, q;
-	int search_value, search_index;
-
+	Node* root = NULL;
 	while(scanf("%d %d", &n, &q) != EOF){
-		for(int i = 0; i < NUM; i++){
-			order[i] = 0;
-		}
-
 		for(int i = 1; i <= n; i++){
-			scanf("%d", &order[i]);
+			scanf("%d", &arr[i]);
 		}
-		Node* tree = NULL;
-		build_tree(&tree, order, 1, n);
+		//printf("Finish creating arr\n");
+		builtTree(&root, 1, n);
+		//printf("Finish creating tree\n");
+		//inorder(root);
 		while(q--){
-			scanf("%d", &search_value);
-			search_index = search(tree, search_value);
-			if(search_index){
-				printf("%d\n", search_index);
-			}
-			else{
-				printf("Break your bridge!\n");
-			}
+			scanf("%d", &x);
+			search(root);
 		}
-		freeBST(tree);
+		freeTree(root);
+		root = NULL;
 	}
-
+	return 0;
 }
-
-
-//Compile Error
