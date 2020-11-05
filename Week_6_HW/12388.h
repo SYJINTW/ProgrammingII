@@ -4,7 +4,6 @@
 #define left left_child
 #define right right_child
 
-
 typedef struct _NODE {
 	int level;
 	struct _NODE *left_child, *right_child;
@@ -26,17 +25,21 @@ void build_tree(Node **now, int *arr, int l, int r){
 }
 
 int query_heatstroke(Node *now, int x){
+	// cannot found
 	if(now == NULL){
-		return 0; // cannot found
+		return 0; 
 	}
+	// found
 	else if(x == now->level){
-		return 1; // found
+		return 1;
 	}
+	// find left
 	else if(x < now->level){
-		return query_heatstroke(now->left, x); // find left
+		return query_heatstroke(now->left, x);
 	}
+	// find right
 	else if(x > now->level){
-		return query_heatstroke(now->right, x); // find right
+		return query_heatstroke(now->right, x); 
 	}
 }
 

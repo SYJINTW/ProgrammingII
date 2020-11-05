@@ -23,7 +23,6 @@ void createTree(Node** root){
 	while(arr[idx] != '\0' && isspace(arr[idx])){
 		idx++;
 	}
-	//printf("%c\n", arr[idx]);
 	//is_digit
 	if(isdigit(arr[idx])){
 		int val = 0;
@@ -32,7 +31,6 @@ void createTree(Node** root){
 			val = val*10 + (int)arr[idx] - 48;
 			idx++;
 		}
-		//printf("%d\n", val);
 		(*root)->value = val;
 		(*root)->left = NULL;
 		(*root)->right = NULL;
@@ -41,7 +39,6 @@ void createTree(Node** root){
 	else if(arr[idx] == 'x'|| arr[idx] == 'y'|| arr[idx] == 'z'){
 		(*root)->type = 2;
 		(*root)->ch = arr[idx];
-		//printf("%c\n", (*root)->ch);
 		idx++;
 		(*root)->left = NULL;
 		(*root)->right = NULL;
@@ -108,9 +105,11 @@ void inorder(Node* root){
 
 int main(){
 	int result = 0;
-	fgets(arr, N, stdin);
+	fgets(arr, N, stdin); // 取值到遇到'\n'
 	scanf("%d %d %d", &x, &y, &z);
 	len = strlen(arr);
+
+	//把最後的 '\n' 換成 '\0'
 	if(len > 0 && arr[len-1] == '\n'){
 		len--;
 		arr[len] = '\0';
@@ -118,7 +117,7 @@ int main(){
 	
 	Node* root = NULL;
 	createTree(&root);
-	//printf("Finish Tree\n");
+	
 	result = cal_t(root);
 
 	inorder(root);
