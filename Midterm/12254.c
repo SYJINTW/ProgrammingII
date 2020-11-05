@@ -8,6 +8,7 @@ unsigned long long t_matrix[3][3];
 unsigned long long var[3];
 unsigned long long t_var[3];
 
+//mul 3*3 matrix to 3*3 matrix
 void matrix_mul(){
 	//initial t_matrix
 	for(int i = 0; i < 3; i++){
@@ -23,7 +24,7 @@ void matrix_mul(){
 			}
 		}
 	}
-	//record
+	//record tmp to matrix
 	for(int i = 0; i < 3; i++){
 		for(int j = 0; j < 3; j++){
 			matrix[i][j] = t_matrix[i][j];
@@ -31,6 +32,7 @@ void matrix_mul(){
 	}
 }
 
+//mul 3*3 matrix to 3*1 matrix
 void matrix_var(){
 	//initial t_var
 	for(int i = 0; i < 3; i++){
@@ -42,7 +44,7 @@ void matrix_var(){
 			t_var[i] = (t_var[i] + (matrix[i][j] * var[j])%NUM)%NUM;
 		}
 	}
-	//record
+	//record tmp to matrix
 	for(int i = 0; i < 3; i++){
 		var[i] = t_var[i];
 	}
@@ -54,15 +56,17 @@ int main(){
 	scanf("%lld", &t);
 	while(t--){
 		scanf("%lld", &x);
-		//initial
+		//initial the matrix
 		matrix[1][1] = matrix[1][2] = matrix[2][0] = matrix[2][2] = 0;
 		matrix[0][0] = matrix[0][2] = matrix[1][0] = matrix[2][1] = 1;
 		matrix[0][1] = 2;
 		var[0] = 13; var[1] = 12; var[2] = 1;
 
+		//x == 1 || x == 2 || x == 3 don't need to calculate
 		if(x == 1) ans = var[2];
 		else if(x == 2) ans = var[1];
 		else if(x == 3) ans = var[0];
+		//x > 3 calculate
 		else{
 			x = x - 3;
 			while(x){
@@ -79,24 +83,6 @@ int main(){
 		}
 		printf("%lld\n", ans);
 	}
-	
-	/*
-	matrix_mul();
-	for(int i = 0; i < 3; i++){
-		for(int j = 0; j < 3; j++){
-			printf("%lld ", matrix[i][j]);
-		}
-		printf("\n");
-	}
-	matrix_mul();
-	for(int i = 0; i < 3; i++){
-		for(int j = 0; j < 3; j++){
-			printf("%lld ", matrix[i][j]);
-		}
-		printf("\n");
-	}
-	*/
-
 	return 0;
 }	
 

@@ -25,15 +25,15 @@ int main(){
 
 	while(q--){
 		scanf("%d %d %d", &l, &r, &m);
-		//loot too much
+		//incorrect loot number
 		if(m > r-l+1){
 			printf("0\n");
 			continue;
 		} else;
 
 		//correct loot number
-		//find if l+m-1 is behind change_point
-		if(l+m-1 > change_point){
+		//find if l+m-1 is behind change_point(the last positive number position)
+		if(l+m-1 >= change_point){
 			r = change_point;
 		}
 		else{
