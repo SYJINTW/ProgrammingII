@@ -27,6 +27,7 @@ ul binarySearch(ul x){
 		//find right
 		else{
 			l = mid+1;
+			ans = l;
 		}
 	}
 	//find the ans (l == r)
