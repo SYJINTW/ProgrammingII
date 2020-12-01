@@ -1,0 +1,3 @@
+/Users/sunyuanjun/Desktop/ProgrammingII/Week_10_HW/12522/build/CMakeFiles/rebuild_cache.dir
+/Users/sunyuanjun/Desktop/ProgrammingII/Week_10_HW/12522/build/CMakeFiles/edit_cache.dir
+/Users/sunyuanjun/Desktop/ProgrammingII/Week_10_HW/12522/build/CMakeFiles/app.dir
