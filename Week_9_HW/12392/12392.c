@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<string.h>
-#include "12392.h"
+#include "function.h"
 #define MAX_N 10004
 
 int n, q;

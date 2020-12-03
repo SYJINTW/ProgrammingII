@@ -21,9 +21,11 @@ class Matrix {
 		}
 		// TODO
 		int *operator[] (const int &x);
+
 		const int *operator[] (const int &x) const {
 			return mat[x];
 		}
+		
 		// TODO
 		Matrix operator+ (const Matrix &x) const;
 		// TODO: be aware that this function is declared with friend!!!

@@ -1,12 +1,8 @@
 #include<stdio.h>
 #include<string.h>
 #include <stdlib.h>
+#include "function.h"
 #define MAX_N 10004
-
-typedef struct _NODE {
-	int level;
-	struct _NODE *left_child, *right_child;
-} Node;
 
 void build_tree(Node **now, int *arr, int l, int r){
 	if(l > r){
@@ -21,17 +17,20 @@ void build_tree(Node **now, int *arr, int l, int r){
 	build_tree(&((*now)->right_child), arr, mid+1, r);	
 }
 
-
 int query_heatstroke(Node *now, int x){
-	if(now == NULL) return 0;
-	else;
-
-	if(now->level == x){
+	// 沒有找到
+	if(now == NULL){
+		return 0;
+	}
+	// 找到
+	else if(now->level == x){
 		return 1;
 	}
+	// 比要找得值大 => find left
 	else if(now->level > x){
 		return query_heatstroke(now->left_child, x);
 	}
+	// 比要找得值小 => find right
 	else{
 		return query_heatstroke(now->right_child, x);
 	}
@@ -69,12 +68,13 @@ void eat_rat(Node **root, int x){
 		// two child
 		else{
 			Node *now = (*root)->right_child;
+			// find the most left side of the right child 
 			while(now->left_child != NULL){
 				now = now->left_child;
 			}
 			// change level but don't change address
 			(*root)->level = now->level;
-			// delete now by using eat_rat
+			// delete now by using eat_rat from right_child
 			eat_rat(&((*root)->right_child), now->level);
 		}
 	}

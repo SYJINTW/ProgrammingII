@@ -1,6 +1,6 @@
 #include <iostream>
 #include <iomanip>
-#include <set>
+#include <set>  // set <type> set_name
 #include <string>
 using namespace std;
 
@@ -8,14 +8,13 @@ int main(){
 	int n;
 	string user_input;
 	cin >> n;
-	set <int> myset; //{1, 1, 1,12,100};
-	//cout << *(--myset.end()) << endl;
+	set <int> myset;
 	while(n--){
 		cin >> user_input;
-		// print
 		// str1.compare(str2) 和 (str1 == str2) 效果類似
 		// str1.compare(str2) 會回傳：'==' -> 0, '>' -> 1, '<' -> -1
 		// (str1 == str2) 只有 true 和 false
+		// print
 		if(!user_input.compare("print")){
 			if(myset.size() != 0){
 				for(auto s : myset){

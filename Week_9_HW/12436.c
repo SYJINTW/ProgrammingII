@@ -18,9 +18,11 @@ int upper_bound(unsigned long long target){
 	int mid;
 	while(l<r){
 		mid = (l+r)/2;
+		// "<="
 		if(A[mid] <= target){
 			l = mid + 1;
 		}
+		// ">"
 		else{
 			r = mid;
 		}
@@ -35,9 +37,11 @@ int lower_bound(unsigned long long target){
 	int mid;
 	while(l<r){
 		mid = (l+r)/2;
+		// "<"
 		if(A[mid] < target){
 			l = mid + 1;
 		}
+		// ">="
 		else{
 			r = mid;
 		}
@@ -50,25 +54,22 @@ int main(){
 	int q = 0;
 	int upper, lower;
 	scanf("%d",  &n);
+
+	// 先存入陣列 1~n
 	for(int i = 1; i <= n; i++){
 		scanf("%llu", &A[i]);
 	}
-	qsort(A+1, n, sizeof(unsigned long long), cmp);
 
-	// for debug
-	/*
-	for(int i = 1; i <= n; i++){
-		printf("%llu ", A[i]);
-	}
-	*/
+	// 排序
+	qsort(A+1, n, sizeof(unsigned long long), cmp);
 
 	scanf("%d", &q);
 	while(q--){
 		scanf("%llu", &target);
+		// 找上界的位置
 		upper = upper_bound(target);
+		// 找下界的位置
 		lower = lower_bound(target);
-		//printf("lower: %d\n", lower);
-		//printf("upper: %d\n", upper);
 		printf("%d\n", upper - lower);
 	}
 }
