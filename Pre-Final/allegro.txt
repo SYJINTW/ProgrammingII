@@ -1,0 +1,10 @@
+allegra安裝教學 : 
+windows: https://drive.google.com/file/d/1OQBL_ChhbuOfK_qGZtIvIzfh11LlxWz4/view?usp=sharing
+mac: https://goo.gl/vpTA9t
+mac: https://hackmd.io/@kerwintsai/SkRTk6kCS
+
+allegra載點
+載點：https://github.com/liballeg/allegro5/releases
+
+allegra reference(好用的函數都在這裡):
+https://liballeg.org/a5docs/trunk/
