@@ -1,3 +1,6 @@
+//
+// 找某個值在陣列中出現幾次
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -20,11 +23,11 @@ int upper_bound(unsigned long long target){
 		mid = (l+r)/2;
 		// "<="
 		if(A[mid] <= target){
-			l = mid + 1;
+			l = mid + 1; // mid 最大可能是 target
 		}
 		// ">"
 		else{
-			r = mid;
+			r = mid; // mid 有可能包含 剛好比 target 大的值
 		}
 	}
 	return r;
@@ -39,11 +42,11 @@ int lower_bound(unsigned long long target){
 		mid = (l+r)/2;
 		// "<"
 		if(A[mid] < target){
-			l = mid + 1;
+			l = mid + 1; // mid 有可能包含 剛好比 target 小的值
 		}
 		// ">="
 		else{
-			r = mid;
+			r = mid; // mid 最小可能是 target
 		}
 	}
 	return r;
@@ -55,15 +58,21 @@ int main(){
 	int upper, lower;
 	scanf("%d",  &n);
 
-	// 先存入陣列 1~n
+	// 先存入陣列 1~n 
+	// 1 2 3 4 5 6 7 8 9 10
+	//(8 3 6 1 7 7 3 7 10 7)
 	for(int i = 1; i <= n; i++){
 		scanf("%llu", &A[i]);
 	}
 
 	// 排序
+	// 1 2 3 4 5 6 7 8 9 10
+	//(1 3 3 6 7 7 7 7 8 10)
 	qsort(A+1, n, sizeof(unsigned long long), cmp);
 
 	scanf("%d", &q);
+
+	// 找 target 的上界和下界，找（剛好比自己大一點的值的位置）-（自己最左邊的位置）
 	while(q--){
 		scanf("%llu", &target);
 		// 找上界的位置

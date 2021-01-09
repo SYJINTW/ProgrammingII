@@ -20,10 +20,10 @@ int main()
 		for(long long int i = 0; i < x; i++)
 		{
 			int num = base[i];
-			length = ((length-i-1)*(num-48))%MOD+(i+1)%MOD;
+			length = ((length-i-1)*(num-48)) % MOD + (i+1) % MOD;
 			if(base.length() <= x)
 			{
-				str = str.assign(base, i+1, base.length()-i);
+				str = base.substr(i+1, base.length()-i);
 				for(int k = 0; k < num-48-1 && base.length() <= x; k++)
 				{
 					base += str;

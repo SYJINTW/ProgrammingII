@@ -50,6 +50,7 @@ class NormalSandwich : public Food {
 class Dish {
 	public:
 		Dish() { food = nullptr; }
+		// TODO:
 		~Dish();
 		Food &getFood() { return (*food); }
 		const Food &getFood() const { return (*food); }

@@ -1,4 +1,7 @@
+//
 // DFS
+// 距離在 r 之內的分成一組
+// 找出自己一組的個數和多個一組的個數
 #include <iostream>
 #include <iomanip>
 #include <vector>
@@ -45,7 +48,7 @@ int main(){
 	}
 
 	for(int i = 0; i < n; i++){
-		if(G[i] == true) continue;
+		if(G[i] == true) continue; // 已經被分組 (skip)
 		else if(dfs(i) == 1) A++;
 		else B++;
 	}

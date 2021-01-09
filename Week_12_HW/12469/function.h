@@ -9,7 +9,7 @@ class BigInt{
 	public:
 		int sign; // 正負號 1:'+' -1:'-'
 		long long m[MAX_N];
-		int l; //長度
+		int l; //長度 m[MAX_N]的長度
 		long long operator [](int i) const { return m[i]; }
 		long long &operator [](int i) { return m[i]; }
 		BigInt(){ l=1, m[0]=0; sign=1; }

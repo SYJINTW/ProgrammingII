@@ -9,11 +9,15 @@ Matrix::Matrix(int r, int c){
 	memset(mat, 0, sizeof(mat)); // initial all the element to 0
 }
 
-int *Matrix::operator[] (const int &x){
+int*
+Matrix::operator[] (const int &x){
 	return mat[x]; // 回傳一個 pointer
+	// 回傳 mat[] 而不是 mat[][]
+	// 因為 x 本身就是一個指針了
 }
 
-Matrix Matrix::operator+ (const Matrix &x) const{
+Matrix 
+Matrix::operator+ (const Matrix &x) const{
 	Matrix result(row, col); // create a new matrix
 	for(int i = 0; i < row; i++){
 		for(int j = 0; j < col; j++){
@@ -25,15 +29,15 @@ Matrix Matrix::operator+ (const Matrix &x) const{
 }
 
 // 因為是 friend 形式，所以可以用外部函數的方式去完成它
-// 可以直接使用 x.row x.col y.row y.col
+// 可以直接使用 x.row x.col y.row y.col ，可以直街訪問 private 的東西
 Matrix operator* (const Matrix &x, const Matrix &y){
 	Matrix result(x.row, y.col); // create a new matrix
 	// 基本的矩陣相乘
+	// k => x's col and y's row
 	for(int i = 0; i < x.row; i++){
 		for(int j = 0; j < y.col; j++){
-			// k => x's col and y's row
 			for(int k = 0; k < x.col; k++){
-				result[i][j] = (result[i][j]+((x[i][k]*y[k][j])%MOD+MOD)%MOD)%MOD;
+				result[i][j] = (result[i][j] + ((x[i][k] * y[k][j]) % MOD + MOD) % MOD) % MOD;
 			}
 		}
 	}
