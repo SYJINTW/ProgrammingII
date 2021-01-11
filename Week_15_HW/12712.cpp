@@ -3,7 +3,7 @@
 #include <math.h>
 #include <set>
 
-#define ll long long int
+#define ll long long
 #define NUM 5000000000
 
 using namespace std;
