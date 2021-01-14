@@ -54,7 +54,6 @@ int main()
 			{
 				if(j == i) continue; // 略過第一層的
 				tmp = prefix_sum[soldier[j].second] - prefix_sum[soldier[j].first-1];
-				//cout << j << "_section-tmp: " << section-tmp << endl;
 				max = (section-tmp > max)?(section - tmp):max;
 			}
 			ans = (max>ans)?max:ans;

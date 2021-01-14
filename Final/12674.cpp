@@ -30,9 +30,24 @@ int main()
 			b = tmp;
 		}
 
-		//cout << a << " " << b << " " << c << " " << endl;
-
+		/*
+		if(c-b>a){
+			day += a;
+			day += b;
+		}
+		else
+		{
+			day += c-b;
+			a -= c-b;
+			a /= 2;
+			day += a*2;
+			day += b-a;
+		}
+		cout << day << endl;
+		*/
+		
 		if(b<(b+c-a)/2) cout << a+b << endl;
 		else cout << a+(b+c-a)/2 << endl;
+		
 	}
 }

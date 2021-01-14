@@ -30,13 +30,7 @@ int main()
 		for(; i <= n; i++)
 			prefix_sum.push_back(price[i]+prefix_sum[i-k]);
 
-		/*
-		for(auto v : prefix_sum)
-			cout << v << " ";
-		cout << "\n";
-		*/
-
-		int pos = 0;
+		int pos;
 		for(pos = n; pos > 0; pos--)
 		{
 			if(prefix_sum[pos] <= p) break;
