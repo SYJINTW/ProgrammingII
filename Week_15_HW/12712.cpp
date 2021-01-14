@@ -1,61 +1,66 @@
+// x = 2^i + k
+// y = (2^i-1)k + k(k-1)/2
 #include <iostream>
-#include <iomanip>
-#include <math.h>
-#include <set>
 
-#define ll long long
 #define NUM 5000000000
 
 using namespace std;
 
-int t;
-ll n;
+long long two_p[64];
 
-ll BS(ll i)
+void sol(long long y)
 {
-	ll r, l, mid, calc;
-	// Find k
-	l = 0;
-	r = NUM;
-	while(l < r)
+	long long tmp, l, r, mid, calc;
+
+	for(int i = 0; i < 64; i++)
 	{
-		mid = (l+r)/2;
-		calc = mid*2+1;
-		if(calc*i+calc*(calc-1)/2 > n) r = mid-1;
-		if(calc*i+calc*(calc-1)/2 < n) l = mid+1;
-		if(calc*i+calc*(calc-1)/2 == n) return calc;
+		// Lucky -> k = 1
+		if(two_p[i] == y+1)
+		{
+			cout << two_p[i] << "\n";
+			return;
+		}
+
+		// Binary Search
+		l = 0;
+		r = NUM<y?NUM:y;
+		while(l<r)
+		{
+			mid = (l+r)/2;
+			calc = mid*2+1;
+			tmp = (two_p[i]-1) + (calc-1)/2;
+			if(tmp*calc >= y) r = mid;
+			else l = mid+1;
+		}
+		calc = r*2+1;
+		tmp = (two_p[i]-1) + (calc-1)/2;
+		if(tmp*calc == y)
+		{
+			cout << two_p[i]*calc << "\n";
+			return;
+		}
 	}
-	return -1;
+	cout << "-1" << "\n";
+	return;
 }
 
 int main()
 {
-	ll ans;
-	set <ll> myset; 
+	int t;
+	long long y;
 	cin >> t;
+
+	// create a arr for [1,2,4,8,16,32,....]
+	two_p[0] = 1;
+	for(int i = 1; i <= 64; i++)
+		two_p[i] = two_p[i-1]*2;
+	
 	while(t--)
 	{
-		cin >> n;
-
-		// y = (2i-1)k + k(k-1)/2
-		// Assume i
-		for(int i = 0; i < 64; i++)
-		{
-			// Find k
-			ans = BS(pow(2,i)-1);
-			if(ans != -1)
-			{
-				cout << "i: " << i << endl;
-				cout << "calc: " << ans << endl;
-				cout << "ans: " << pow(2,i)*ans << endl;
-				myset.insert(pow(2,i)*ans);
-			}
-			else;
-		}
-
-		if(!myset.empty()) cout << *myset.begin() << endl;
-		else cout << -1 << endl;
-		myset.clear();
+		cin >> y;
+		if(y >= 1) sol(y);
+		else cout << "0" << "\n";
 	}
 
+	return 0;
 }
