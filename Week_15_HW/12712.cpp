@@ -1,66 +1,69 @@
-// x = 2^i + k
-// y = (2^i-1)k + k(k-1)/2
 #include <iostream>
-
-#define NUM 5000000000
-
+#include <algorithm>
 using namespace std;
 
-long long two_p[64];
+long long y;
+int i;
 
-void sol(long long y)
+long long bs(long long lower_bound, long long upper_bound) // k's bound
 {
-	long long tmp, l, r, mid, calc;
 
-	for(int i = 0; i < 64; i++)
-	{
-		// Lucky -> k = 1
-		if(two_p[i] == y+1)
-		{
-			cout << two_p[i] << "\n";
-			return;
-		}
+    long long test;
+    long long k;
+    long long _2powi;
+    long long x = -1;
 
-		// Binary Search
-		l = 0;
-		r = NUM<y?NUM:y;
-		while(l<r)
-		{
-			mid = (l+r)/2;
-			calc = mid*2+1;
-			tmp = (two_p[i]-1) + (calc-1)/2;
-			if(tmp*calc >= y) r = mid;
-			else l = mid+1;
-		}
-		calc = r*2+1;
-		tmp = (two_p[i]-1) + (calc-1)/2;
-		if(tmp*calc == y)
-		{
-			cout << two_p[i]*calc << "\n";
-			return;
-		}
-	}
-	cout << "-1" << "\n";
-	return;
+    while (lower_bound <= upper_bound)
+    {
+        _2powi = 1;
+
+        k = (lower_bound + upper_bound) / 2;
+        if (k % 2 == 0) {
+            if (lower_bound != upper_bound)
+                k++;
+            else
+                return x;
+        }
+
+        for (int j = 0; j < i; j++)
+            _2powi *= 2;
+        test = k * (_2powi - 1) + k * (k - 1) / 2;
+
+        if (test < y)
+            lower_bound = k + 1;
+        else if (test > y)
+            upper_bound = k - 1;
+        else {
+            x = _2powi * k;
+            upper_bound = k - 1;
+        }
+    }
+    return x;
+
 }
 
-int main()
+int main(void)
 {
-	int t;
-	long long y;
-	cin >> t;
+    int t;
+    long long x, ans;
 
-	// create a arr for [1,2,4,8,16,32,....]
-	two_p[0] = 1;
-	for(int i = 1; i <= 64; i++)
-		two_p[i] = two_p[i-1]*2;
-	
-	while(t--)
-	{
-		cin >> y;
-		if(y >= 1) sol(y);
-		else cout << "0" << "\n";
-	}
+    cin >> t;
+    while (t--) {
+        x = INT64_MAX;
+        cin >> y;
+        long long bound = 1;
+        for (i = 62; i >= 0; i--) {
+            ans = bs(1, bound);
+            if (ans != -1 && ans < x)
+                x = ans;
+            if (bound * 2 < 5e9)
+                bound = bound << 1;
+        }
+        if (x == INT64_MAX)
+            cout << -1 << endl;
+        else
+            cout << x << endl;
+    }
 
-	return 0;
+    return 0;
 }
