@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1590115262 source:c:\users\user\desktop\程設2\12767\main.cpp
+	<iostream>
+	"function.h"
+
+1590115262 c:\users\user\desktop\程設2\12767\function.h
+	<iostream>
+
+1590119535 source:c:\users\user\desktop\程設2\12767\function.cpp
+	"function.h"
+

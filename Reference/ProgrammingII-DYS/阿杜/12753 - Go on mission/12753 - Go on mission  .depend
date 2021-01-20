@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1589501012 source:c:\users\user\desktop\程設2\12753 - go on mission\main.cpp
+	<iostream>
+	"function.h"
+
+1589501004 c:\users\user\desktop\程設2\12753 - go on mission\function.h
+	<iostream>
+

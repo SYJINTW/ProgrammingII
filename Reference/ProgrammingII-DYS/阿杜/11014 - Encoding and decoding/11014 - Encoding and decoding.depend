@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1590080479 source:c:\users\user\desktop\程設2\11014 - encoding and decoding\main.cpp
+	<iostream>
+	"function.h"
+
+1590108770 c:\users\user\desktop\程設2\11014 - encoding and decoding\function.h
+	<iostream>
+	<string>
+	<sstream>
+

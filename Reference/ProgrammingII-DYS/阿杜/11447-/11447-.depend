@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1591320187 source:c:\users\user\desktop\程設2\11447-\main.cpp
+	<cassert>
+	<iostream>
+	<map>
+	<ostream>
+	<string>
+	"function.h"
+
+1591319803 c:\users\user\desktop\程設2\11447-\function.h
+	<cstddef>
+	<map>
+	<string>
+
+1591321937 source:c:\users\user\desktop\程設2\11447-\function.cpp
+	<cassert>
+	<iostream>
+	<map>
+	<ostream>
+	<string>
+	"function.h"
+	<set>
+

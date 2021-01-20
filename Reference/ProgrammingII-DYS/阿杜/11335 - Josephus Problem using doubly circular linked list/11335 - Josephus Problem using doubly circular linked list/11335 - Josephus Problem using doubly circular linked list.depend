@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1585229404 source:c:\users\user\desktop\程設2\11335 - josephus problem using doubly circular linked list\11335 - josephus problem using doubly circular linked list\main.c
+	<stdio.h>
+	<stdlib.h>
+	"function.h"
+
+1585229416 c:\users\user\desktop\程設2\11335 - josephus problem using doubly circular linked list\11335 - josephus problem using doubly circular linked list\function.h
+
+1585244883 source:c:\users\user\desktop\程設2\11335 - josephus problem using doubly circular linked list\11335 - josephus problem using doubly circular linked list\function.c
+

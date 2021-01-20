@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1428848630 source:e:\sr\i2p2014-2\materials\c++\part1\code\fig09_04_06\time\fig09_06.cpp
+	<iostream>
+	<stdexcept>
+	"Time.h"
+
+1429452968 e:\sr\i2p2014-2\materials\c++\part1\code\fig09_04_06\time\time.h
+

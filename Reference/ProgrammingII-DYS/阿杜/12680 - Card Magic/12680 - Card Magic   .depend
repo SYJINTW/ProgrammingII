@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1585283796 source:c:\users\user\desktop\程設2\12680 - card magic\function.cpp
+	<stdlib.h>
+	<stdio.h>
+
+1585258463 source:c:\users\user\desktop\程設2\12680 - card magic\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	"function.h"
+
+1585258422 c:\users\user\desktop\程設2\12680 - card magic\function.h
+

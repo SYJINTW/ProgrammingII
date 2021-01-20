@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.html": "html",
+        "vector": "cpp",
+        "xtree": "cpp",
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "queue": "cpp"
+    }
+}

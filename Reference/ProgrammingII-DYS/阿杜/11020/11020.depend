@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1590098870 source:c:\users\user\desktop\程設2\11020\main.cpp
+	<iostream>
+	<string.h>
+	"function.h"
+
+1590098870 c:\users\user\desktop\程設2\11020\function.h
+	<iostream>
+	<math.h>
+

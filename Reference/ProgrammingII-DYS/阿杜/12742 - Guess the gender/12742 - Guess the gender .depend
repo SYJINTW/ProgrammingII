@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1588309483 source:c:\users\user\desktop\程設2\12742 - guess the gender\function.cpp
+	<iostream>
+	"function.h"
+	<stdlib.h>
+
+1588305394 c:\users\user\desktop\程設2\12742 - guess the gender\function.h
+
+1588305382 source:c:\users\user\desktop\程設2\12742 - guess the gender\main.cpp
+	<iostream>
+	"function.h"
+

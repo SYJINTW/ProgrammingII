@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1590838725 source:c:\users\user\desktop\程設2\towerdefense\towerdefense\allegro5exception.cpp
+	<stdexcept>
+	"Allegro5Exception.hpp"
+
+1590838725 c:\users\user\desktop\程設2\towerdefense\towerdefense\allegro5exception.hpp
+	<stdexcept>
+	<string>
+

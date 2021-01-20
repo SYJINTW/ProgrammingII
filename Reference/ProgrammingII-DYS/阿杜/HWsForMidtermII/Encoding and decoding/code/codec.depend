@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1462697115 source:d:\i2p2_2016\code\week13\codec_sol\function.cpp
+	<iostream>
+	<string>
+	<sstream>
+	<cctype>
+	"function.h"
+
+1462672527 d:\i2p2_2016\code\week13\codec_sol\function.h
+	<iostream>
+	<string>
+
+1462697115 source:c:\users\fatyu\desktop\codec_sol\codec_sol\function.cpp
+	<iostream>
+	<string>
+	<sstream>
+	<cctype>
+	"function.h"
+
+1462672527 c:\users\fatyu\desktop\codec_sol\codec_sol\function.h
+	<iostream>
+	<string>
+
+1462802169 source:c:\users\fatyu\desktop\codec_sol\codec_sol\main.cpp
+	<iostream>
+	"function.h"
+
+1494507012 source:d:\sr\nthucourses\i2p\i2p2018\i2p2018-2\materials\midtermii\hwsformidtermii\encoding and decoding\code\main.cpp
+	<iostream>
+	"function.h"
+
+1494507012 d:\sr\nthucourses\i2p\i2p2018\i2p2018-2\materials\midtermii\hwsformidtermii\encoding and decoding\code\function.h
+	<iostream>
+	<string>
+

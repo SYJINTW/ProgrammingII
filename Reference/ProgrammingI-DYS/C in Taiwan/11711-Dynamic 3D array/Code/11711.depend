@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1513818630 source:d:\sr\nthucourses\i2p\i2p2017\i2p2017-1\hw_lab_exam\11711-dynamic 3d array\code\11711\main.c
+	<stdio.h>
+	"function.h"
+
+1513818658 d:\sr\nthucourses\i2p\i2p2017\i2p2017-1\hw_lab_exam\11711-dynamic 3d array\code\11711\function.h
+
+1513825262 source:d:\sr\nthucourses\i2p\i2p2017\i2p2017-1\hw_lab_exam\11711-dynamic 3d array\code\function.c
+	<stdlib.h>
+	"function.h"
+
+1513818658 d:\sr\nthucourses\i2p\i2p2017\i2p2017-1\hw_lab_exam\11711-dynamic 3d array\code\function.h
+
+1513818630 source:d:\sr\nthucourses\i2p\i2p2017\i2p2017-1\hw_lab_exam\11711-dynamic 3d array\code\main.c
+	<stdio.h>
+	"function.h"
+

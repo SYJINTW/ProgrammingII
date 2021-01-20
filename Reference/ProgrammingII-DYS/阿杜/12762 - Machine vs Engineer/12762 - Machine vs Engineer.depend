@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1590108341 source:c:\users\user\desktop\程設2\12762 - machine vs engineer\main.cpp
+	<cstdio>
+	<cstdlib>
+	<cstring>
+	<ctime>
+	<iostream>
+	"function.h"
+
+1590108369 c:\users\user\desktop\程設2\12762 - machine vs engineer\function.h
+	<cstdio>
+	<cstdlib>
+	<cstring>
+	<cassert>
+

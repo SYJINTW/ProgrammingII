@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1451213586 source:j:\i2p2015-1week16\code\extern_static\main.c
+	<stdio.h>
+	<stdlib.h>
+	"function.h"
+
+1451213322 source:j:\i2p2015-1week16\code\extern_static\function.c
+	<stdio.h>
+	"function.h"
+
+1451215704 j:\i2p2015-1week16\code\extern_static\function.h
+
+1451216184 source:j:\i2p2015-1week16\code\extern\function.c
+	<stdio.h>
+	"function.h"
+
+1451216320 j:\i2p2015-1week16\code\extern\function.h
+
+1451219398 source:j:\i2p2015-1week16\code\extern\main.c
+	<stdio.h>
+	<stdlib.h>
+	"function.h"
+

@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1431269523 source:e:\sr\i2p\i2p2015\i2p2015-2\materials\4. c++\part4\code\fig12_09_17\fig12_09_17\basepluscommissionemployee.cpp
+	<iostream>
+	<stdexcept>
+	"BasePlusCommissionEmployee.h"
+
+1431269524 e:\sr\i2p\i2p2015\i2p2015-2\materials\4. c++\part4\code\fig12_09_17\fig12_09_17\basepluscommissionemployee.h
+	<string>
+	"CommissionEmployee.h"
+
+1431269524 e:\sr\i2p\i2p2015\i2p2015-2\materials\4. c++\part4\code\fig12_09_17\fig12_09_17\commissionemployee.h
+	<string>
+	"Employee.h"
+
+1431269524 e:\sr\i2p\i2p2015\i2p2015-2\materials\4. c++\part4\code\fig12_09_17\fig12_09_17\employee.h
+	<string>
+
+1431269524 source:e:\sr\i2p\i2p2015\i2p2015-2\materials\4. c++\part4\code\fig12_09_17\fig12_09_17\commissionemployee.cpp
+	<iostream>
+	<stdexcept>
+	"CommissionEmployee.h"
+
+1431269524 source:e:\sr\i2p\i2p2015\i2p2015-2\materials\4. c++\part4\code\fig12_09_17\fig12_09_17\employee.cpp
+	<iostream>
+	"Employee.h"
+

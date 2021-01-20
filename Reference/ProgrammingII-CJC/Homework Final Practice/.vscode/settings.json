@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "*.html": "html",
+        "xutility": "c",
+        "xstring": "cpp",
+        "stack": "cpp",
+        "vector": "cpp",
+        "queue": "cpp",
+        "xtree": "cpp",
+        "ostream": "cpp"
+    }
+}

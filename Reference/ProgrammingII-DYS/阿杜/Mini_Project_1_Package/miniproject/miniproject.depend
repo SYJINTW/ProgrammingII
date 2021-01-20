@@ -1,0 +1,36 @@
+# depslib dependency file v1.0
+1588497043 source:c:\users\user\desktop\程設2\mini_project_1_package\miniproject\codegen.cpp
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"codeGen.h"
+
+1588418509 c:\users\user\desktop\程設2\mini_project_1_package\miniproject\codegen.h
+	"parser.h"
+
+1588486420 c:\users\user\desktop\程設2\mini_project_1_package\miniproject\parser.h
+	"lex.h"
+
+1588418543 c:\users\user\desktop\程設2\mini_project_1_package\miniproject\lex.h
+
+1588418525 source:c:\users\user\desktop\程設2\mini_project_1_package\miniproject\lec.cpp
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	"lex.h"
+
+1588485412 source:c:\users\user\desktop\程設2\mini_project_1_package\miniproject\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"lex.h"
+	"parser.h"
+
+1588497254 source:c:\users\user\desktop\程設2\mini_project_1_package\miniproject\parser.cpp
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"parser.h"
+	"codeGen.h"
+
